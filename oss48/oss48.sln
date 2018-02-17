@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oss48", "Oss48\Oss48.csproj", "{DD99DB3A-84AF-452C-B6CA-D906D5183363}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oss48", "Oss48\Oss48.csproj", "{FE78DEC9-008B-41FB-8131-7A2D501A9F75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DD99DB3A-84AF-452C-B6CA-D906D5183363}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD99DB3A-84AF-452C-B6CA-D906D5183363}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD99DB3A-84AF-452C-B6CA-D906D5183363}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD99DB3A-84AF-452C-B6CA-D906D5183363}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE78DEC9-008B-41FB-8131-7A2D501A9F75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE78DEC9-008B-41FB-8131-7A2D501A9F75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE78DEC9-008B-41FB-8131-7A2D501A9F75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE78DEC9-008B-41FB-8131-7A2D501A9F75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E61E28F9-B79D-4B9E-9C9F-49A9CDDF770B}
+		SolutionGuid = {97D93972-CBD9-4A87-BA67-74ED800BCB41}
 	EndGlobalSection
 EndGlobal

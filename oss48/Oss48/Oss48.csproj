@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DD99DB3A-84AF-452C-B6CA-D906D5183363}</ProjectGuid>
+    <ProjectGuid>{FE78DEC9-008B-41FB-8131-7A2D501A9F75}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -220,7 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="DB\Cucina\" />
+    <Folder Include="DB\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -252,9 +252,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>61085</DevelopmentServerPort>
+          <DevelopmentServerPort>61894</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:61085/</IISUrl>
+          <IISUrl>http://localhost:61894/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

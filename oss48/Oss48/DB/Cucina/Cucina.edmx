@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="cucinaModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ingredienti">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Dolcezza" Type="int" />
+          <Property Name="Sapidita" Type="int" />
+          <Property Name="IdTipoProdotto" Type="int" Nullable="false" />
+          <Property Name="CostoKg" Type="decimal" Precision="5" Scale="2" />
+        </EntityType>
+        <EntityType Name="ricette">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Difficolta" Type="int" />
+          <Property Name="TempoPreparazione" Type="int" />
+          <Property Name="Testo" Type="text" />
+        </EntityType>
+        <EntityType Name="ricette2ingredienti">
+          <Key>
+            <PropertyRef Name="IdRicetta" />
+            <PropertyRef Name="IdIngrediente" />
+          </Key>
+          <Property Name="IdRicetta" Type="int" Nullable="false" />
+          <Property Name="IdIngrediente" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tipoprodotto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="cucinaModelStoreContainer">
+          <EntitySet Name="ingredienti" EntityType="Self.ingredienti" Schema="cucina" store:Type="Tables" />
+          <EntitySet Name="ricette" EntityType="Self.ricette" Schema="cucina" store:Type="Tables" />
+          <EntitySet Name="ricette2ingredienti" EntityType="Self.ricette2ingredienti" Schema="cucina" store:Type="Tables" />
+          <EntitySet Name="tipoprodotto" EntityType="Self.tipoprodotto" Schema="cucina" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="cucinaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ingredienti">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Dolcezza" Type="Int32" />
+          <Property Name="Sapidita" Type="Int32" />
+          <Property Name="IdTipoProdotto" Type="Int32" Nullable="false" />
+          <Property Name="CostoKg" Type="Decimal" />
+        </EntityType>
+        <EntityType Name="ricette">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Difficolta" Type="Int32" />
+          <Property Name="TempoPreparazione" Type="Int32" />
+          <Property Name="Testo" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ricette2ingredienti">
+          <Key>
+            <PropertyRef Name="IdRicetta" />
+            <PropertyRef Name="IdIngrediente" />
+          </Key>
+          <Property Name="IdRicetta" Type="Int32" Nullable="false" />
+          <Property Name="IdIngrediente" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tipoprodotto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="cucinaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ingredienti" EntityType="Self.ingredienti" />
+          <EntitySet Name="ricette" EntityType="Self.ricette" />
+          <EntitySet Name="ricette2ingredienti" EntityType="Self.ricette2ingredienti" />
+          <EntitySet Name="tipoprodotto" EntityType="Self.tipoprodotto" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="cucinaModelStoreContainer" CdmEntityContainer="cucinaEntities">
+          <EntitySetMapping Name="ingredienti">
+            <EntityTypeMapping TypeName="cucinaModel.ingredienti">
+              <MappingFragment StoreEntitySet="ingredienti">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Dolcezza" ColumnName="Dolcezza" />
+                <ScalarProperty Name="Sapidita" ColumnName="Sapidita" />
+                <ScalarProperty Name="IdTipoProdotto" ColumnName="IdTipoProdotto" />
+                <ScalarProperty Name="CostoKg" ColumnName="CostoKg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ricette">
+            <EntityTypeMapping TypeName="cucinaModel.ricette">
+              <MappingFragment StoreEntitySet="ricette">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Difficolta" ColumnName="Difficolta" />
+                <ScalarProperty Name="TempoPreparazione" ColumnName="TempoPreparazione" />
+                <ScalarProperty Name="Testo" ColumnName="Testo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ricette2ingredienti">
+            <EntityTypeMapping TypeName="cucinaModel.ricette2ingredienti">
+              <MappingFragment StoreEntitySet="ricette2ingredienti">
+                <ScalarProperty Name="IdRicetta" ColumnName="IdRicetta" />
+                <ScalarProperty Name="IdIngrediente" ColumnName="IdIngrediente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipoprodotto">
+            <EntityTypeMapping TypeName="cucinaModel.tipoprodotto">
+              <MappingFragment StoreEntitySet="tipoprodotto">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

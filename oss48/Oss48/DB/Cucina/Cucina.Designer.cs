@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Luca Mori\Source\Repos\oss48\Oss48\Oss48\DB\Cucina\Cucina.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Luca Mori\source\repos\oss48\oss48\Oss48\DB\Cucina\Cucina.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

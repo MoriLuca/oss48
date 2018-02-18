@@ -1,0 +1,53 @@
+﻿@model  List<Oss48.DB.Cucina.tipoprodotto>
+
+@{
+    /**/
+
+    ViewBag.Title = "TipoProdotto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TipoProdotto</h2>
+
+@if ((int)ViewData["SaveChange"] > 0)
+{
+    <div class="alert alert-success alert-dismissable fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Record Salvato Correttamente</strong>
+    </div>
+}
+@if ((int)ViewData["SaveChange"] == -1)
+{
+    <div class="alert alert-danger alert-dismissable ">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Errore! </strong>@ViewData["ErrorMessage"]
+    </div>
+}
+
+<script>
+    window.setTimeout(function () {
+        $(".alert").fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+        });
+    }, 2000);
+</script>
+
+@foreach (var item in Model)
+{
+    <div class="media">
+        <div class="media">
+            <div class="media-body">
+                <h5 class="mt-0 mb-1">Media object</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+            <img class="d-flex ml-3" src="@item.Img" alt="Generic placeholder image">
+        </div>
+    </div>
+}
+
+
+@using (Html.BeginForm("TipoProdotto", "Cucina", FormMethod.Post))
+{
+    @Html.TextBoxFor(model => model[0].Nome)
+    <input type = "submit" name = "Submit" class="btn"/>
+}

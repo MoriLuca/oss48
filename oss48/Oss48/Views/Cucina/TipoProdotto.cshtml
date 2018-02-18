@@ -6,6 +6,8 @@
     ViewBag.Title = "TipoProdotto";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
 
 <h2>TipoProdotto</h2>
 
@@ -32,22 +34,58 @@
     }, 2000);
 </script>
 
-@foreach (var item in Model)
-{
-    <div class="media">
-        <div class="media">
-            <div class="media-body">
-                <h5 class="mt-0 mb-1">Media object</h5>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-            </div>
-            <img class="d-flex ml-3" src="@item.Img" alt="Generic placeholder image">
-        </div>
-    </div>
-}
-
-
 @using (Html.BeginForm("TipoProdotto", "Cucina", FormMethod.Post))
 {
     @Html.TextBoxFor(model => model[0].Nome)
-    <input type = "submit" name = "Submit" class="btn"/>
+    <input type="submit" name="Submit" class="btn" />
 }
+
+@Ajax.BeginForm("SearchTipoProdotto", "Cucina",
+     new AjaxOptions
+     {
+         HttpMethod = "POST",
+         UpdateTargetId = "uno",
+         InsertionMode = InsertionMode.Replace
+//LoadingElementId = "waitimage"
+})
+
+<h1>Enter Product Code</h1>
+<h2>
+    Product Code: @Html.TextBox("nome","", new { id = "eo" })<br />
+    <input type="submit" value="Show Details" id="submitSearch"/>
+    <input type="reset" value="Clear" />
+</h2>
+@{Html.EndForm();}
+
+<div id="uno">
+    ciao
+</div>
+
+
+
+<div class="progress">
+    <div id="a" class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+         aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+        <p id="progressTest"></p>
+    </div>
+</div>
+
+<script>
+
+    var num = 20;
+
+    $("#eo").keyup(function () {
+        $("#submitSearch").click();
+    });
+    setInterval(
+        function () {
+            //$("#submitSearch").click();
+            document.getElementById('a').style.width = num + "%";
+            document.getElementById('progressTest').innerHTML = num + "% ... Lavoraizion in corso"
+            num++;
+            console.log("Avviato");
+        },
+        1000
+    );
+</script>
+

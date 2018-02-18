@@ -1,0 +1,16 @@
+﻿@model List<Oss48.DB.Cucina.tipoprodotto>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <div class="media">
+        <div class="media">
+            <div class="media-body">
+                <h5 class="mt-0 mb-1">@item.Nome</h5>
+            </div>
+            <img class="d-flex ml-3" src="@item.Img" alt="Generic placeholder image">
+        </div>
+    </div>
+}

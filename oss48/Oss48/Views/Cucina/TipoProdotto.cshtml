@@ -80,6 +80,7 @@
     setInterval(
         function () {
             //$("#submitSearch").click();
+            if (num > 100) num = 0;
             document.getElementById('a').style.width = num + "%";
             document.getElementById('progressTest').innerHTML = num + "% ... Lavoraizion in corso"
             num++;
